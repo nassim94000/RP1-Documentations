@@ -4,3 +4,17 @@ create database synchro;
 create user 'johndoe'@'localhost' identified by 'azerty';
 grant all privileges on synchro.* to 'johndoe'@'localhost';
 flush privileges;
+exit;
+maridb -h localhost -u johndoe -p;
+use synchro;
+
+create table tache (
+  id serial primary key,
+  libelle varchar(100) not null,
+  description varchar(500),
+  date_debut DATETIME NOT NULL,
+  date_fin DATETIME NOT NULL,
+  importance varchar(50) NOT NULL,
+  statut varchar(50) NOT NULL
+);
+  
