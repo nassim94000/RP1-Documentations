@@ -17,4 +17,19 @@ create table tache (
   importance varchar(50) NOT NULL,
   statut varchar(50) NOT NULL
 );
+
+create table planning (
+);
+
+create table operationnel(
+);
+
+create table drirecteurDeProjets (
+);
+
+create table ressourcesHumaines (
+);
+
+create table administrateurGroupe (
+);
   
