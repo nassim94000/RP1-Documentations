@@ -19,17 +19,30 @@ create table tache (
 );
 
 create table planning (
+  id serial primary key,
 );
 
 create table operationnel(
+  id serial primary key,
+  nom varchar(50) NOT NULL,
+  prenom varchar(50) NOT NULL,
+  
 );
 
 create table drirecteurDeProjets (
+  id serial primary key,
+  nom varchar(50) NOT NULL,
+  prenom varchar(50) NOT NULL,
 );
 
 create table ressourcesHumaines (
+  id serial primary key,
 );
 
 create table administrateurGroupe (
+    id serial primary key,
 );
+
+create table Groupe (
+
   
