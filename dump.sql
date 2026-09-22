@@ -1,13 +1,12 @@
-su -
-mariadb
+--su -
+--mariadb
 create database synchro;
 create user 'johndoe'@'localhost' identified by 'azerty';
 grant all privileges on synchro.* to 'johndoe'@'localhost';
 flush privileges;
-exit;
-maridb -h localhost -u johndoe -p;
+--exit;
+--maridb -h localhost -u johndoe -p;
 use synchro;
-
 
 CREATE TABLE utilisateur (
     id_utilisateur INT AUTO_INCREMENT PRIMARY KEY,
@@ -40,14 +39,12 @@ CREATE TABLE groupe_membre (
     id_groupe INT NOT NULL,
     id_utilisateur INT NOT NULL,
     date_inscription DATE NOT NULL DEFAULT (CURRENT_DATE),
+    est_admin BOOLEAN NOT NULL,
     PRIMARY KEY (id_groupe, id_utilisateur), --création de la clé primaire par les deux clé étrangères 
     FOREIGN KEY (id_groupe) REFERENCES groupe(id_groupe) ON DELETE CASCADE,  --suppression simplifié
     FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id_utilisateur) ON DELETE CASCADE  --suppression simplifié
 );
 
-create table groupe_administrateur (
-    id serial primary key,
-);
 
 
 
