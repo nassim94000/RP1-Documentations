@@ -1,9 +1,10 @@
 --su -
 --mariadb
-create database synchro;
-create user 'johndoe'@'localhost' identified by 'azerty';
-grant all privileges on synchro.* to 'johndoe'@'localhost';
-flush privileges;
+DROP IF EXISTS DATABASE synchro;
+CREATE DATABASE synchro;
+CREATE USER 'johndoe'@'localhost' identified BY 'azerty';
+GRANT ALL PRIVILEGES ON synchro.* TO 'johndoe'@'localhost';
+FLUSH PRIVILEGES;
 --exit;
 --maridb -h localhost -u johndoe -p;
 use synchro;
