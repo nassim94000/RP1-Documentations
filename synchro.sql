@@ -1,6 +1,6 @@
 --su -
 --mariadb
-DROP IF EXISTS DATABASE synchro;
+DROP DATABASE IF EXISTS synchro;
 CREATE DATABASE synchro;
 CREATE USER 'johndoe'@'localhost' identified BY 'azerty';
 GRANT ALL PRIVILEGES ON synchro.* TO 'johndoe'@'localhost';
