@@ -56,3 +56,15 @@ CREATE TABLE groupe_membre (
     FOREIGN KEY (id_groupe) REFERENCES groupe(id_groupe) ON DELETE CASCADE,
     FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id_utilisateur) ON DELETE CASCADE
 );
+
+-- UTILISATEURS --
+INSERT INTO utilisateur (nom, prenom, email, fonction, mdp) VALUES ('BEN BOUBAKER', 'Nassim', 'nassim.benboubaker@monlycee.net', 'ressources humaines', 'azerty');
+INSERT INTO utilisateur (nom, prenom, email, fonction, mdp) VALUES ('PICHEGRU', 'Raphaël', 'raphael.pichegru@monlycee.net', 'chef de projet', 'azerty');
+INSERT INTO utilisateur (nom, prenom, email, fonction, mdp) VALUES ('DOGO', 'Mélina', 'melina.dogo@monlycee.net', 'operationnel', 'azerty');
+
+
+
+
+
+
+
