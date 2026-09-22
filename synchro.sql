@@ -24,9 +24,8 @@ CREATE TABLE tache (
     description TEXT,
     date_debut DATETIME NOT NULL,
     date_fin DATETIME NOT NULL,
-    importance ENUM('faible', 'moyen', 'fort') NOT NULL,
+    importance ENUM('faible', 'moyenne', 'forte') NOT NULL,
     statut ENUM('en cours', 'fait', 'en retard') NOT NULL,
-    FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id_utilisateur) ON DELETE CASCADE
 );
 
 CREATE TABLE planning (
