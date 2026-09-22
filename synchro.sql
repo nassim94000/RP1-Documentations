@@ -19,13 +19,23 @@ CREATE TABLE utilisateur (
 
 CREATE TABLE tache (
     id_tache INT AUTO_INCREMENT PRIMARY KEY,
-    id_utilisateur INT NOT NULL,
+    id_planning INT NOT NULL,
     libelle VARCHAR(100) NOT NULL,
     description TEXT,
     date_debut DATETIME NOT NULL,
     date_fin DATETIME NOT NULL,
     importance ENUM('faible', 'moyen', 'fort') NOT NULL,
     statut ENUM('en cours', 'fait', 'en retard') NOT NULL,
+    FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id_utilisateur) ON DELETE CASCADE
+);
+
+CREATE TABLE planning (
+    id_utilisateur INT NOT NULL,
+    id_tache INT NOT NULL,
+    PRIMARY KEY (id_tache, id_utilisateur),
+    --CRER LES CLEES ETRANGERE--
+    --ON DELETE CASCADE POUR SIMPLIFIER LA SUPRESSION--
+    FOREIGN KEY (id_tache) REFERENCES tache(id_tache) ON DELETE CASCADE,
     FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id_utilisateur) ON DELETE CASCADE
 );
 
