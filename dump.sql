@@ -13,7 +13,7 @@ CREATE TABLE utilisateur (
     nom VARCHAR(100) NOT NULL,
     prenom VARCHAR(100) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
-    fonction VARCHAR(20) CHECK (fonction IN ('operationnel', 'chef de projet', 'ressources humaines')) NOT NULL,
+    fonction VARCHAR(30) CHECK (fonction IN ('operationnel', 'chef de projet', 'ressources humaines')) NOT NULL,
     mdp VARCHAR(255) NOT NULL
 );
 
@@ -25,7 +25,7 @@ CREATE TABLE tache (
     date_debut DATETIME NOT NULL,
     date_fin DATETIME NOT NULL,
     importance VARCHAR(10) CHECK (importance IN ('faible', 'moyen', 'fort')) NOT NULL,
-    statut VARCHAR(20) CHECK (statut IN ('en cours', 'fait', 'en retard')) NOT NULL
+    statut VARCHAR(20) CHECK (statut IN ('en cours', 'fait', 'en retard')) NOT NULL,
     FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id_utilisateur) ON DELETE CASCADE --suppression simplifié
 );
 
