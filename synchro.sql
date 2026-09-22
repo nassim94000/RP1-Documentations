@@ -41,6 +41,8 @@ CREATE TABLE groupe_membre (
     date_inscription DATE NOT NULL DEFAULT (CURRENT_DATE),
     est_admin BOOLEAN NOT NULL DEFAULT FALSE,
     PRIMARY KEY (id_groupe, id_utilisateur),
+    --CRER LES CLEES ETRANGERE--
+    --ON DELETE CASCADE POUR SUPPRIMER UN UTILISATEUR DE CES GROUPE SI CETTE UTILISATEUR N'EXISTE PLUS--
     FOREIGN KEY (id_groupe) REFERENCES groupe(id_groupe) ON DELETE CASCADE,
     FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id_utilisateur) ON DELETE CASCADE
 );
