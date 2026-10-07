@@ -19,7 +19,6 @@ CREATE TABLE utilisateur (
 
 CREATE TABLE tache (
     id_tache INT AUTO_INCREMENT PRIMARY KEY,
-    id_planning INT NOT NULL,
     libelle VARCHAR(100) NOT NULL,
     description TEXT,
     date_debut DATETIME NOT NULL,
