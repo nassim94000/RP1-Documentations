@@ -1,0 +1,40 @@
+========= pour moi =============
+
+
+================================
+
+// avant tout
+
+shell :
+
+sudo apt install php-mysql
+php -v                        
+sudo apt install php8.3-mysql
+
+
+// Création de la base synchro et de l'utilisateur de l'admin de la base synch@localhost
+
+dans mariadb :
+
+DROP DATABASE synchro IF EXISTS;
+CREATE DATABASE synchro CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER 'synch'@'localhost' IDENTIFIED BY 'azerty';
+GRANT ALL PRIVILEGES ON synchro.* TO 'synch'@'localhost';
+FLUSH PRIVILEGES;
+
+
+// .env à modifier dans laravel /.env
+
+.env :
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=synchro
+DB_USERNAME=synch
+DB_PASSWORD=azerty
+
+// migrations à ajouter (base de donnée)
+
+shell :
+./artisan migrate:refresh
